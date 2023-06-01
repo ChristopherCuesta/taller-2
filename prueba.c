@@ -32,6 +32,22 @@ int cuadradoMagico(int filas, int columnas, int cuadrado[filas][columnas]) {
         }
         
     }
+    
+    int sumaDiagonalPrincipal = 0;
+    for (int i = 0; i < filas; i++) {
+        sumaDiagonalPrincipal += cuadrado[i][i];
+    }
+    if (sumaDiagonalPrincipal != constantemagica) {
+        return 0; 
+    }
+    
+    int sumaDiagonalSecundaria = 0;
+    for (int i = 0; i < filas; i++) {
+        sumaDiagonalSecundaria += cuadrado[i][columnas - 1 - i];
+    }
+    if (sumaDiagonalSecundaria != constantemagica) {
+        return 0; 
+    }
     return 1;
 }
 
